@@ -1,0 +1,102 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <ProjectGuid>{2125803f-3fa6-4ef8-a819-d7c6e975d316}</ProjectGuid>
+    <RootNamespace>Sample.SQL.Query.Monitor</RootNamespace>
+    <Name>Sample.SQL.Query.Monitor</Name>
+    <ManagementPackName>Sample.SQL.Query.Monitor</ManagementPackName>
+    <Version>1.0.0.0</Version>
+    <MpFrameworkVersion>v7.0.2</MpFrameworkVersion>
+    <MpFrameworkProfile>OM</MpFrameworkProfile>
+    <ProductVersion>1.1.0.0</ProductVersion>
+    <SccProjectName>SAK</SccProjectName>
+    <SccProvider>SAK</SccProvider>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccLocalPath>SAK</SccLocalPath>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\Debug\</OutputPath>
+    <GenerateSealed>True</GenerateSealed>
+    <Company>OpsConfig</Company>
+    <Copyright>Copyright (c) OpsConfig. All rights reserved.</Copyright>
+    <DelaySigning>False</DelaySigning>
+    <AssemblyOriginatorKeyFile>C:\MPSEALKEY.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <DebugSymbols>false</DebugSymbols>
+    <OutputPath>bin\Release\</OutputPath>
+    <DelaySigning>false</DelaySigning>
+    <Company>MyCompany</Company>
+    <Copyright>Copyright (c) MyCompany. All rights reserved.</Copyright>
+    <DelaySign>false</DelaySign>
+    <AssemblyOriginatorKeyFile />
+  </PropertyGroup>
+  <ItemGroup>
+    <ManagementPackReference Include="Microsoft.SQLServer.2014.Discovery">
+      <HintPath>C:\Management Pack Authoring\Source Files\Microsoft System Center Management Pack for SQL Server 2014\6.6.4.0\Microsoft.SQLServer.2014.Discovery.mp</HintPath>
+      <Alias>SQL2014Core</Alias>
+      <MinVersion>6.6.0.0</MinVersion>
+      <PackageToBundle>False</PackageToBundle>
+    </ManagementPackReference>
+    <ManagementPackReference Include="Microsoft.SystemCenter.Library">
+      <Alias>SC</Alias>
+      <PackageToBundle>false</PackageToBundle>
+    </ManagementPackReference>
+    <ManagementPackReference Include="Microsoft.Windows.Library">
+      <Alias>Windows</Alias>
+      <PackageToBundle>False</PackageToBundle>
+    </ManagementPackReference>
+    <ManagementPackReference Include="System.Health.Library">
+      <Alias>Health</Alias>
+      <PackageToBundle>False</PackageToBundle>
+    </ManagementPackReference>
+    <ManagementPackReference Include="System.Library">
+      <Alias>System</Alias>
+      <PackageToBundle>false</PackageToBundle>
+    </ManagementPackReference>
+    <ManagementPackReference Include="Microsoft.SystemCenter.Visualization.Library">
+      <Alias>Visualization</Alias>
+      <PackageToBundle>false</PackageToBundle>
+    </ManagementPackReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Monitors" />
+    <Folder Include="Display Strings" />
+    <Folder Include="Secure Reference" />
+    <Folder Include="Presentation" />
+    <Folder Include="Type Definitions" />
+    <Folder Include="Scripts" />
+    <Folder Include="Type Definitions\Data Source Module Type" />
+    <Folder Include="Type Definitions\Unit Monitor Type" />
+    <Folder Include="Type Definitions\Probe Action Module Type" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Display Strings\DisplayStrings.mpx">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Monitors\Monitors.mpx">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Presentation\Presentation.mpx">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Secure Reference\SecureReference.mpx">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Type Definitions\Data Source Module Type\DataSourceModuleType.mpx">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Type Definitions\Probe Action Module Type\ProbeActionModuleType.mpx">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Type Definitions\Unit Monitor Type\UnitMonitorType.mpx">
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Scripts\QuerySQL.ps1" />
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Microsoft\VSAC\Microsoft.SystemCenter.OperationsManager.targets" />
+</Project>

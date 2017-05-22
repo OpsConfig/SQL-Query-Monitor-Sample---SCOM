@@ -1,0 +1,68 @@
+﻿<ManagementPackFragment SchemaVersion="2.0" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+
+  
+  <LanguagePacks>
+    <LanguagePack ID="ENU" IsDefault="true">
+      <Presentation>
+        <StringResources>
+          <StringResource ID="Sample.SQL.Query.Monitor.QuerySQL.Alert.Message" />
+        </StringResources>
+      </Presentation>
+      <DisplayStrings>
+        <DisplayString ElementID="Sample.SQL.Query.Monitor">
+          <Name>Sample SQL Query Monitor</Name>
+          <Description>Sample MP for querying SQL and alerting on specific conditions</Description>
+        </DisplayString>
+        <DisplayString ElementID="Sample.SQL.Query.Monitor.QuerySQL.Alert.Message">
+          <Name>Sample SQL Query Monitor: Failure</Name>
+          <Description>
+Status: {0}
+Count: {1}
+
+Server Name: {5}
+SQL Instance: {2}
+Database Name: {3}
+Threshold: {4}
+          </Description>
+        </DisplayString>
+        <DisplayString ElementID="Sample.SQL.Query.Monitor.QuerySQL.ProbeActionModuleType">
+          <Name>Sample SQL Query Monitor QuerySQL ProbeActionModuleType</Name>
+          <Description>Probe Action Module Type for Unit Monitor: Sample.SQL.Query.Monitor.QuerySQL</Description>
+        </DisplayString>
+        <DisplayString ElementID="Sample.SQL.Query.Monitor.QuerySQL.ProbeActionModuleType" SubElementID="TimeoutSeconds">
+          <Name>Timeout Seconds</Name>
+        </DisplayString>
+        <DisplayString ElementID="Sample.SQL.Query.Monitor.QuerySQL.DataSourceModuleType">
+          <Name>Sample SQL Query Monitor QuerySQL DataSourceModuleType</Name>
+          <Description>Data Source Module Type for Unit Monitor: Sample.SQL.Query.Monitor.QuerySQL</Description>
+        </DisplayString>
+        <DisplayString ElementID="Sample.SQL.Query.Monitor.QuerySQL.DataSourceModuleType" SubElementID="TimeoutSeconds">
+          <Name>Timeout Seconds</Name>
+        </DisplayString>
+        <DisplayString ElementID="Sample.SQL.Query.Monitor.QuerySQL.DataSourceModuleType" SubElementID="IntervalSeconds">
+          <Name>Interval Seconds</Name>
+        </DisplayString>
+        <DisplayString ElementID="Sample.SQL.Query.Monitor.QuerySQL.UnitMonitorType">
+          <Name>Sample SQL Query Monitor QuerySQL UnitMonitorType</Name>
+          <Description>Unit Monitor Type for Unit Monitor: Sample.SQL.Query.Monitor.QuerySQL</Description>
+        </DisplayString>
+        <DisplayString ElementID="Sample.SQL.Query.Monitor.QuerySQL.UnitMonitorType" SubElementID="TimeoutSeconds">
+          <Name>Timeout Seconds</Name>
+        </DisplayString>
+        <DisplayString ElementID="Sample.SQL.Query.Monitor.QuerySQL.UnitMonitorType" SubElementID="IntervalSeconds">
+          <Name>Interval Seconds</Name>
+        </DisplayString>
+        <DisplayString ElementID="Sample.SQL.Query.Monitor.QuerySQL">
+          <Name>Sample SQL Query Monitor</Name>
+          <Description></Description>
+        </DisplayString>
+        <DisplayString ElementID="Sample.SQL.Query.Monitor.QuerySQL" SubElementID="Success">
+          <Name>Healthy</Name>
+        </DisplayString>
+        <DisplayString ElementID="Sample.SQL.Query.Monitor.QuerySQL" SubElementID="Error">
+          <Name>Critical</Name>
+        </DisplayString>
+      </DisplayStrings>
+    </LanguagePack>
+  </LanguagePacks>
+</ManagementPackFragment>

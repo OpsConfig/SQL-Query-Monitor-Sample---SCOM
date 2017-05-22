@@ -1,0 +1,36 @@
+﻿<ManagementPackFragment SchemaVersion="2.0" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Monitoring>
+    <Monitors>
+      <UnitMonitor ID="Sample.SQL.Query.Monitor.QuerySQL" Accessibility="Public" RunAs="Sample.SQL.Query.Monitor.RunAsProfile" Enabled="false" Target="SQL2014Core!Microsoft.SQLServer.2014.Database" ParentMonitorID="Health!System.Health.AvailabilityState" Remotable="true" Priority="Normal" TypeID="Sample.SQL.Query.Monitor.QuerySQL.UnitMonitorType" ConfirmDelivery="false">
+        <Category>AvailabilityHealth</Category>
+        <AlertSettings AlertMessage="Sample.SQL.Query.Monitor.QuerySQL.Alert.Message">
+          <AlertOnState>Error</AlertOnState>
+          <AutoResolve>true</AutoResolve>
+          <AlertPriority>Low</AlertPriority>
+          <AlertSeverity>Error</AlertSeverity>
+          <AlertParameters>
+            <AlertParameter1>$Data/Context/Property[@Name='Status']$</AlertParameter1>
+            <AlertParameter2>$Data/Context/Property[@Name='Count']$</AlertParameter2>
+            <AlertParameter3>$Data/Context/Property[@Name='Instance']$</AlertParameter3>
+            <AlertParameter4>$Data/Context/Property[@Name='DatabaseName']$</AlertParameter4>
+            <AlertParameter5>$Data/Context/Property[@Name='Threshold']$</AlertParameter5>
+            <AlertParameter6>$Target/Host/Host/Property[Type="Windows!Microsoft.Windows.Computer"]/NetworkName$</AlertParameter6>
+          </AlertParameters>
+        </AlertSettings>
+        <OperationalStates>
+          <OperationalState ID="Success" MonitorTypeStateID="Healthy" HealthState="Success" />
+          <OperationalState ID="Error" MonitorTypeStateID="Critical" HealthState="Error" />
+        </OperationalStates>
+        <Configuration>
+          <TimeoutSeconds>300</TimeoutSeconds>
+          <IntervalSeconds>900</IntervalSeconds>
+          <DatabaseName>OperationsManager</DatabaseName>
+          <Threshold>10</Threshold>
+          <Instance>MSSQLSERVER</Instance>
+          <Port>1433</Port>
+          <ErrorLogging>0</ErrorLogging>
+        </Configuration>
+      </UnitMonitor>
+    </Monitors>
+  </Monitoring>
+</ManagementPackFragment>
